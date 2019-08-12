@@ -1,4 +1,4 @@
-package com.example.corvatestapp;
+package com.che.corvatest;
 
 import org.junit.Test;
 

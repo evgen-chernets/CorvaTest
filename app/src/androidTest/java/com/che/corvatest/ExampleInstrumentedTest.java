@@ -1,4 +1,4 @@
-package com.example.corvatestapp;
+package com.che.corvatest;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.corvatestapp", appContext.getPackageName());
+        assertEquals("com.che.corvatest", appContext.getPackageName());
     }
 }
