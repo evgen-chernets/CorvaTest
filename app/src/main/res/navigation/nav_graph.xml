@@ -3,11 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/blankFragment">
+    app:startDestination="@id/galleryFragment">
 
     <fragment
-        android:id="@+id/blankFragment"
+        android:id="@+id/galleryFragment"
         android:name="com.che.corvatest.GalleryFragment"
         android:label="fragment_blank"
-        tools:layout="@layout/fragment_blank" />
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_galleryFragment_to_colorFragment"
+            app:destination="@id/colorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/colorFragment"
+        android:name="com.che.corvatest.ColorFragment"
+        android:label="ColorFragment" >
+        <action
+            android:id="@+id/action_colorFragment_to_colorFragment2"
+            app:destination="@id/colorFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/colorFragment2"
+        android:name="com.che.corvatest.ColorFragment"
+        android:label="ColorFragment" >
+        <action
+            android:id="@+id/action_colorFragment2_to_colorFragment3"
+            app:destination="@id/colorFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/colorFragment3"
+        android:name="com.che.corvatest.ColorFragment"
+        android:label="ColorFragment" />
 </navigation>
