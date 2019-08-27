@@ -20,6 +20,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
+import androidx.navigation.Navigation;
 
 import android.view.Menu;
 
@@ -42,11 +45,12 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
@@ -89,24 +93,67 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
+        int target = item.getItemId();
+        NavController navController= Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavDestination navDestination = navController.getCurrentDestination();
+        int current = navDestination.getId();
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_tools) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        switch (current) {
+            case R.id.galleryFragment:
+                switch (target){
+                    case R.id.nav_color:
+                        navController.navigate(R.id.action_galleryFragment_to_colorFragment);
+                        break;
+                    case R.id.nav_color2:
+                        navController.navigate(R.id.action_galleryFragment_to_colorFragment2);
+                        break;
+                    case R.id.nav_color3:
+                        navController.navigate(R.id.action_galleryFragment_to_colorFragment3);
+                        break;
+                }
+                break;
+            case R.id.colorFragment:
+                switch (target){
+                    case R.id.nav_gallery:
+                        navController.navigate(R.id.action_colorFragment_to_galleryFragment);
+                        break;
+                    case R.id.nav_color2:
+                        navController.navigate(R.id.action_colorFragment_to_colorFragment2);
+                        break;
+                    case R.id.nav_color3:
+                        navController.navigate(R.id.action_colorFragment_to_colorFragment3);
+                        break;
+                }
+                break;
+            case R.id.colorFragment2:
+                switch (target){
+                    case R.id.nav_color:
+                        navController.navigate(R.id.action_colorFragment2_to_colorFragment);
+                        break;
+                    case R.id.nav_gallery:
+                        navController.navigate(R.id.action_colorFragment2_to_galleryFragment);
+                        break;
+                    case R.id.nav_color3:
+                        navController.navigate(R.id.action_colorFragment2_to_colorFragment3);
+                        break;
+                }
+                break;
+            case R.id.colorFragment3:
+                switch (target){
+                    case R.id.nav_color:
+                        navController.navigate(R.id.action_colorFragment3_to_colorFragment);
+                        break;
+                    case R.id.nav_color2:
+                        navController.navigate(R.id.action_colorFragment3_to_colorFragment2);
+                        break;
+                    case R.id.nav_gallery:
+                        navController.navigate(R.id.action_colorFragment3_to_galleryFragment);
+                        break;
+                }
+                break;
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
