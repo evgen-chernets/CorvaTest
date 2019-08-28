@@ -7,19 +7,19 @@
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:title="@string/item_gallery" />
         <item
             android:id="@+id/nav_color"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:title="@string/item_color" />
         <item
             android:id="@+id/nav_color2"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:title="@string/item_color2" />
         <item
             android:id="@+id/nav_color3"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:title="@string/item_color3" />
     </group>
 
 </menu>

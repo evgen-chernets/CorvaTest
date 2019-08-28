@@ -13,23 +13,23 @@
         android:id="@+id/tab_gallery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gallery" />
+        android:text="@string/item_gallery" />
 
     <com.google.android.material.tabs.TabItem
         android:id="@+id/tab_color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Color" />
+        android:text="@string/item_color" />
 
     <com.google.android.material.tabs.TabItem
         android:id="@+id/tab_color2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Color2" />
+        android:text="@string/item_color2" />
 
     <com.google.android.material.tabs.TabItem
         android:id="@+id/tab_color3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Color3" />
+        android:text="@string/item_color3" />
 </com.google.android.material.tabs.TabLayout>
